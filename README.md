@@ -1,5 +1,10 @@
 # React Server-Side-Render
 
+## Features
+- React 16
+- webpack 3
+- koa 2
+
 ## Development
 To start development, follow there steps:
 ```javascript
@@ -8,6 +13,7 @@ $ cd react-server-side-render
 $ npm i 
 $ npm start
 ```
+Then open [localhost:3000](http://localhost:3000) in broswer.
 
 ## License
 MIT

@@ -3,9 +3,9 @@
 ## Development
 To start development, follow there steps:
 ```javascript
-$ git clone https://github.com/rherwig/template-react-16-ssr.git
+$ git clone https://github.com/WingMrL/React-Server-Side-Render.git
 $ cd react-server-side-render
-$ npm i // [--registry=https://registry.npm.taobao.org]
+$ npm i 
 $ npm start
 ```
 

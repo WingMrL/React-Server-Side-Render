@@ -1,32 +1,48 @@
 import React, { Component } from 'react';
+import Hello from '../components/Hello';
+import Count from '../components/Count';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as CountActions from '../actions/count';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = {
-      index: 0
-    };
   }
 
   handleClick() {
-    this.setState((prevState) => {
-      return {
-        index: prevState.index + 1
-      }
-    });
+    const { actions } = this.props;
+    actions.indexAddOne();
   }
 
   render() {
-    const { index } = this.state;
     return (
       <div>
-        <h1> Hello, React Server-Side-Render.</h1>
-        <h2> Index: { index } </h2>
+        <Hello />
+        <Count />
         <button onClick={ this.handleClick }>Click me</button>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch: dispatch,
+    actions: {
+      ...bindActionCreators(CountActions, dispatch)
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

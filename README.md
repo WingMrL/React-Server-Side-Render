@@ -3,7 +3,8 @@ React 16 server side render boilerplate.
 
 ## Features
 - React 16
-- redux
+- react-redux
+- react-router
 - webpack 3
 - koa 2
 

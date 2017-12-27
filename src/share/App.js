@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Hello from '../components/Hello';
 import Count from '../components/Count';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Hello />
+        { this.props.children || <div /> }
         <Count />
         <button onClick={ this.handleClick }>Click me</button>
       </div>

@@ -1,7 +1,12 @@
 const Router = require('koa-router');
-import homeRouter from './home';
+const pageNotFound = require('../middleware/404');
 
 let router = new Router();
-router.use('/', homeRouter.routes(), homeRouter.allowedMethods());
+
+router.get('/apis', async (ctx) => {
+  ctx.body = '<h1>Welcome to call apis</h1>';
+});
+
+router.get('*', pageNotFound());
 
 module.exports = router;
